@@ -73,7 +73,7 @@ var webpack = require("webpack");
 </carousel>
 ```
 
-# :dizzy_face: Ohh. What are other options :grey_question:
+# :dizzy_face: Ohh. What are the other options :grey_question:
 
 Currently following options are available.
 ##### *(More to come)*

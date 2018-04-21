@@ -7,7 +7,7 @@
 
 # :snowflake: So how do I install it :grey_question:
 
- 1. `npm i vue-owl-carousel` or `yarn add vue-owl-carousel`
+ 1. `npm i v-owl-carousel` or `yarn add v-owl-carousel`
  2. Inject [jQuery](https://jquery.com/) through [webpack](https://webpack.js.org/)
  ```
 var webpack = require("webpack");

@@ -46,6 +46,22 @@ export default {
 
         rewind : {
             default: true
+        },
+
+        mouseDrag : {
+            default: true
+        },
+
+        touchDrag: {
+            default: true
+        },
+
+        pullDrag: {
+            default: true
+        },
+
+        freeDrag: {
+            default: false
         }
     },
 
@@ -60,6 +76,10 @@ export default {
             autoplay     : this.autoplay,
             autoplaySpeed: this.autoplaySpeed,
             rewind       : this.rewind,
+            mouseDrag    : this.mouseDrag,
+            touchDrag    : this.touchDrag,
+            pullDrag     : this.pullDrag,
+            freeDrag     : this.freeDrag,
         });
 
     }

@@ -26,7 +26,8 @@
     "webpack"            : "^4.6.0",
     "webpack-cli"        : "^2.0.14"
   },
-  "browser": {
+  "sideEffects": false,
+  "browser"    : {
     "vue": "vue/dist/vue.common.js"
   },
   "scripts": {

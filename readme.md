@@ -1,9 +1,17 @@
 
+[![npm](https://img.shields.io/npm/dt/v-owl-carousel.svg?style=for-the-badge)](https://www.npmjs.com/package/v-owl-carousel)
+
+  ---
+
 ## :snowflake: What is this :grey_question:
 
 
 
+
+
 - The [VueJS](https://vuejs.org/) wrapper for [Owl Carousel](https://owlcarousel2.github.io/OwlCarousel2/).
+
+
 
 
 
@@ -12,51 +20,93 @@
 
 
 
+
+
 ## :snowflake: So, how to install it :grey_question:
+
+
 
 
 
 1. `npm i v-owl-carousel` or `yarn add v-owl-carousel`
 
+
+
 2. Inject [jQuery](https://jquery.com/) through [webpack](https://webpack.js.org/)
 
-	```
-
-	var webpack = require("webpack");
 
 
-
-	...
+```
 
 
 
-	plugins: [
+var webpack = require("webpack");
 
-	new webpack.ProvidePlugin({
 
-	$: "jquery",
 
-	jQuery: "jquery"
 
-	})
 
-	]
+...
 
-	```
+
+
+
+
+plugins: [
+
+
+
+new webpack.ProvidePlugin({
+
+
+
+$: "jquery",
+
+
+
+jQuery: "jquery"
+
+
+
+})
+
+
+
+]
+
+
+
+```
+
+
 
 3. To compile templates on the client, add this to your `package.json`
 
-	```
 
-	// ...
 
-	"browser": {
+```
 
-	"vue": "vue/dist/vue.common.js"
 
-	},
 
-	```
+// ...
+
+
+
+"browser": {
+
+
+
+"vue": "vue/dist/vue.common.js"
+
+
+
+},
+
+
+
+```
+
+
 
 
 
@@ -64,23 +114,35 @@
 
 
 
+
+
 1. Register the component
 
 
 
-	`Vue.component('carousel', carousel)`
+
+
+`Vue.component('carousel', carousel)`
 
 
 
-	#### Or
+
+
+#### Or
 
 
 
-	use it locally
+
+
+use it locally
 
 
 
-	`import carousel from 'v-owl-carousel'`
+
+
+`import carousel from 'v-owl-carousel'`
+
+
 
 
 
@@ -88,33 +150,59 @@
 
 
 
-	```
-	<carousel>
-		<img src="https://placeimg.com/200/200/any?1">
-		<img src="https://placeimg.com/200/200/any?2">
-		<img src="https://placeimg.com/200/200/any?3">
-		<img src="https://placeimg.com/200/200/any?4">
-	</carousel>
-	```
+
+
+```
+
+<carousel>
+
+<img src="https://placeimg.com/200/200/any?1">
+
+<img src="https://placeimg.com/200/200/any?2">
+
+<img src="https://placeimg.com/200/200/any?3">
+
+<img src="https://placeimg.com/200/200/any?4">
+
+</carousel>
+
+```
+
+
 
 
 
 ## :heart_eyes_cat: Nice. How do I provide options then :grey_question:
 
+
+
 ```
+
 <carousel :autoplay="true" :nav="false>
-	//
-	//
+
+//
+
+//
+
 </carousel>
+
 ```
+
+
 
 ## :dizzy_face: Ohh. What are the other options :grey_question:
 
 
 
+
+
 Currently following options are available.
 
+
+
 ##### *(More to come)*
+
+
 
 
 
@@ -122,13 +210,21 @@ Currently following options are available.
 
 
 
+
+
 type : `number`
+
+
 
 
 default : `3`
 
 
+
+
 The number of items you want to see on the screen.
+
+
 
 
 
@@ -136,13 +232,21 @@ The number of items you want to see on the screen.
 
 
 
+
+
 type : `number`
+
+
 
 
 default : `0`
 
 
+
+
 Margin-right (px) on item.
+
+
 
 
 
@@ -150,13 +254,21 @@ Margin-right (px) on item.
 
 
 
+
+
 type : `boolean`
+
+
 
 
 default : `false`
 
 
+
+
 Infinity loop. Duplicate last and first items to get loop illusion.
+
+
 
 
 
@@ -164,10 +276,16 @@ Infinity loop. Duplicate last and first items to get loop illusion.
 
 
 
+
+
 Type: `Boolean`
 
 
+
+
 Default: `false`
+
+
 
 
 
@@ -175,17 +293,27 @@ Center item. Works well with even an odd number of items.
 
 
 
+
+
 - #### nav
+
+
 
 
 
 Type: `Boolean`
 
 
+
+
 Default: `false`
 
 
+
+
 Show next/prev buttons.
+
+
 
 
 
@@ -193,13 +321,21 @@ Show next/prev buttons.
 
 
 
+
+
 Type: `Boolean`
+
+
 
 
 Default: `false`
 
 
+
+
 Autoplay.
+
+
 
 
 
@@ -207,13 +343,21 @@ Autoplay.
 
 
 
+
+
 Type: `Number/Boolean`
+
+
 
 
 Default: `false`
 
 
+
+
 Autoplay speed.
+
+
 
 
 
@@ -221,62 +365,102 @@ Autoplay speed.
 
 
 
+
+
 Type: `Boolean`
 
 
+
+
 Default: `true`
+
+
 
 
 Go backwards when the boundary has reached.
 
 
+
+
 - #### mouseDrag
+
+
 
 
 Type: `Boolean`
 
 
+
+
 Default: `true`
+
+
 
 
 Mouse drag enabled.
 
 
+
+
 - #### touchDrag
+
+
 
 
 Type: `Boolean`
 
 
+
+
 Default: `true`
+
+
 
 
 Touch drag enabled.
 
 
+
+
 - #### pullDrag
+
+
 
 
 Type: `Boolean`
 
 
+
+
 Default: `true`
+
+
 
 
 
 Stage pull to edge.
 
 
+
+
 - #### freeDrag
+
+
 
 
 Type: `Boolean`
 
 
+
+
 Default: `false`
 
 
+
+
 Item pull to edge.
+
+
 
 
 
@@ -284,7 +468,11 @@ Item pull to edge.
 
 
 
+
+
 This is my first NPM package and VueJS code. I've just began learning VueJS. So please contribute freely and help me to improve this component.
+
+
 
 
 
@@ -292,7 +480,11 @@ Thanks.
 
 
 
+
+
 ## :collision: NPM
+
+
 
 
 

@@ -2,7 +2,7 @@
   "name"       : "v-owl-carousel",
   "version"    : "1.0.1",
   "description": "VueJS wrapper for Owl Carousel",
-  "main"       : "index.js",
+  "main"       : "./dist/app.js",
   "keywords"   : [
     "vuejs",
     "carousel",

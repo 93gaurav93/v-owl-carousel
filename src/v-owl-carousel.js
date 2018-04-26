@@ -1,3 +1,4 @@
+window.$ = window.jQuery = require('jquery');
 import "owl.carousel/dist/assets/owl.carousel.min.css"
 import "./assets/css/owl.theme.default.min.css"
 import 'owl.carousel'

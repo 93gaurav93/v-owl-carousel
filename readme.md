@@ -1,5 +1,5 @@
 
-[![npm](https://img.shields.io/npm/dt/v-owl-carousel.svg?style=for-the-badge)](https://www.npmjs.com/package/v-owl-carousel)
+[![npm](https://img.shields.io/npm/dt/v-owl-carousel.svg)](https://www.npmjs.com/package/v-owl-carousel)
 
   ---
 
@@ -28,85 +28,7 @@
 
 
 
-1. `npm i v-owl-carousel` or `yarn add v-owl-carousel`
-
-
-
-2. Inject [jQuery](https://jquery.com/) through [webpack](https://webpack.js.org/)
-
-
-
-```
-
-
-
-var webpack = require("webpack");
-
-
-
-
-
-...
-
-
-
-
-
-plugins: [
-
-
-
-new webpack.ProvidePlugin({
-
-
-
-$: "jquery",
-
-
-
-jQuery: "jquery"
-
-
-
-})
-
-
-
-]
-
-
-
-```
-
-
-
-3. To compile templates on the client, add this to your `package.json`
-
-
-
-```
-
-
-
-// ...
-
-
-
-"browser": {
-
-
-
-"vue": "vue/dist/vue.common.js"
-
-
-
-},
-
-
-
-```
-
-
+`npm i v-owl-carousel` or `yarn add v-owl-carousel`
 
 
 

@@ -1,34 +1,29 @@
-var path = require('path')
-var webpack = require('webpack')
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const path = require('path');
 
-module.exports = {
-  entry: './src/main.js',
+var config = {
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'carousel.js'
+    path: path.resolve(__dirname + '/dist/'),
   },
   module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ],
-      },      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-          }
-          // other vue-loader options go here
-        }
-      },
+    loaders: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loader: 'babel',
+        include: __dirname,
         exclude: /node_modules/
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue'
+      },
+      {
+        test: /\.css$/,
+        loaders: [
+          'vue-style-loader',
+          'css-loader'
+        ]
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -39,45 +34,43 @@ module.exports = {
       }
     ]
   },
-  resolve: {
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js'
-    },
-    extensions: ['*', '.js', '.vue', '.json']
+  externals: {
+    moment: 'moment'
   },
-  devServer: {
-    historyApiFallback: true,
-    noInfo: true,
-    overlay: true
-  },
-  performance: {
-    hints: false
-  },
-  devtool: '#eval-source-map'
-}
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
-  // http://vue-loader.vuejs.org/en/workflow/production.html
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin( {
+      minimize : true,
+      sourceMap : false,
+      mangle: true,
       compress: {
         warnings: false
       }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    }),
+    } ),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
       'window.jQuery': 'jquery'
     })
-  ])
-}
+  ]
+};
+
+
+module.exports = [
+  merge(config, {
+    entry: path.resolve(__dirname + '/src/plugin.js'),
+    output: {
+      filename: 'v-owl-carousel.min.js',
+      libraryTarget: 'window',
+      library: 'VOwlCarousel',
+    }
+  }),
+  merge(config, {
+    entry: path.resolve(__dirname + '/src/Carousel.vue'),
+    output: {
+      filename: 'v-owl-carousel.js',
+      libraryTarget: 'umd',
+      library: 'v-owl-carousel',
+      umdNamedDefine: true
+    }
+  })
+];

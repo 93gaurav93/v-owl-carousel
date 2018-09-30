@@ -3,7 +3,7 @@
 
   ---
 
-## :snowflake: What is this :grey_question:
+## :snowflake: Intro
 
 
 
@@ -22,7 +22,7 @@
 
 
 
-## :snowflake: So, how to install it :grey_question:
+## :snowflake: Installation
 
 
 
@@ -32,46 +32,10 @@
 
 
 
-## :snowflake: Okay. Now how to use :grey_question:
-
-
-
-
-
-1. Register the component
-
-
-
-
-
-`Vue.component('carousel', carousel)`
-
-
-
-
-
-#### Or
-
-
-
-
-
-use it locally
-
-
-
+## :snowflake: Usage
 
 
 `import carousel from 'v-owl-carousel'`
-
-
-
-
-
-2. Now use like this
-
-
-
 
 
 ```
@@ -90,13 +54,7 @@ use it locally
 
 ```
 
-
-
-
-
-## :heart_eyes_cat: Nice. How do I provide options then :grey_question:
-
-
+Set options,
 
 ```
 
@@ -112,7 +70,7 @@ use it locally
 
 
 
-## :dizzy_face: Ohh. What are the other options :grey_question:
+## Available options
 
 
 
@@ -381,24 +339,6 @@ Default: `false`
 
 
 Item pull to edge.
-
-
-
-
-
-# :fire: Note
-
-
-
-
-
-This is my first NPM package and VueJS code. I've just began learning VueJS. So please contribute freely and help me to improve this component.
-
-
-
-
-
-Thanks.
 
 
 

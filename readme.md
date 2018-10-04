@@ -58,7 +58,7 @@ Set options,
 
 ```
 
-<carousel :autoplay="true" :nav="false>
+<carousel :autoplay="true" :nav="false">
 
 //
 

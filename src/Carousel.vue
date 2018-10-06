@@ -46,6 +46,24 @@
         },
         freeDrag: {
             default: false
+        },
+        stagePadding: {
+            default: 0
+        },
+        autoWidth: {
+            default: false
+        },
+        autoHeight: {
+            default: false
+        },
+        dots: {
+            default: true
+        },
+        autoplayTimeout: {
+            default: 5000
+        },
+        autoplayHoverPause: {
+            default: false
         }
       },
       
@@ -63,6 +81,12 @@
             touchDrag    : this.touchDrag,
             pullDrag     : this.pullDrag,
             freeDrag     : this.freeDrag,
+            stagePadding     : this.stagePadding,
+            autoWidth     : this.autoWidth,
+            autoHeight     : this.autoHeight,
+            dots     : this.dots,
+            autoplayTimeout     : this.autoplayTimeout,
+            autoplayHoverPause     : this.autoplayHoverPause,
         });
       }
   }

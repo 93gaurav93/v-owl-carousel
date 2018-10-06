@@ -3,7 +3,7 @@
 
   ---
 
-## :snowflake: Intro
+## Intro
 
 
 
@@ -22,7 +22,7 @@
 
 
 
-## :snowflake: Installation
+## Installation
 
 
 
@@ -32,7 +32,7 @@
 
 
 
-## :snowflake: Usage
+## Usage
 
 
 `import carousel from 'v-owl-carousel'`

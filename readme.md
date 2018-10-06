@@ -342,6 +342,56 @@ Item pull to edge.
 
 
 
+- #### stagePadding
+
+Type: `Number`
+
+Default: `0`
+
+Padding left and right on stage (can see neighbours).
+
+- #### autoWidth
+
+Type: `Boolean`
+
+Default: `false`
+
+Set non grid content. Try using width style on divs.
+
+- #### autoHeight
+
+Type: `Boolean`
+
+Default: `false`
+
+Set non grid content. Try using height style on divs.
+
+- #### dots
+
+Type: `Boolean`
+
+Default: `true`
+
+Show dots navigation.
+
+- #### autoplayTimeout
+
+Type: `Number`
+
+Default: `5000`
+
+Autoplay interval timeout.
+
+- #### autoplayHoverPause
+
+Type: `Boolean`
+
+Default: `false`
+
+Pause on mouse hover.
+
+
+
 
 
 ## :collision: NPM

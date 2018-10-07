@@ -1,5 +1,5 @@
 <template>
-    <div class="owl-carousel owl-theme">
+    <div :id="elementHandle" :class="['owl-carousel', 'owl-theme']">
         <slot></slot>
     </div>
 </template>
@@ -10,6 +10,11 @@
     
     export default {
       name: 'VOwlCarousel',
+      data: function(){
+        return {
+            elementHandle: 'carousel_' +  Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
+          }
+      },
       props: {
         items : {
             default: 3
@@ -68,7 +73,7 @@
       },
       
       mounted : function() {
-        $('.owl-carousel').owlCarousel({
+        $('#' + this.elementHandle).owlCarousel({
             items        : this.items,
             margin       : this.margin,
             loop         : this.loop,

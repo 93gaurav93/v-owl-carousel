@@ -1,7 +1,7 @@
 {
   "name": "v-owl-carousel",
   "description": "VueJS wrapper for Owl Carousel",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": {
     "name": "Gaurav Deshpande <93gaurav93@gmail.com>"
   },
@@ -49,6 +49,6 @@
     "url": "git+https://github.com/93gaurav93/v-owl-carousel.git"
   },
   "scripts": {
-    "build": "rimraf ./dist && webpack --config ./webpack.config.js"
+    "build": "webpack --config ./webpack.config.js"
   }
 }

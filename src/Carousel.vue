@@ -69,6 +69,9 @@
         },
         autoplayHoverPause: {
             default: false
+        },
+        responsive: {
+            default: {}
         }
       },
       
@@ -92,6 +95,7 @@
             dots     : this.dots,
             autoplayTimeout     : this.autoplayTimeout,
             autoplayHoverPause     : this.autoplayHoverPause,
+            responsive     : this.responsive
         });
       }
   }

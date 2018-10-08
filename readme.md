@@ -390,6 +390,16 @@ Default: `false`
 
 Pause on mouse hover.
 
+- #### responsive
+
+Type: `Object`
+
+Default: `{}`
+
+Example : `:responsive="{0:{items:1,nav:false},600:{items:3,nav:true}}"`
+
+Object containing responsive options. Can be set to false to remove responsive capabilities.
+
 
 
 

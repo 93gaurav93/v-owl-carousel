@@ -1,18 +1,28 @@
 <template>
-    <div :id="elementHandle" :class="['owl-carousel', 'owl-theme']">
-        <slot></slot>
+    <div>
+        <span :id="prevHandler">
+            <slot name="prev"></slot>
+        </span>
+        <div :id="elementHandle" :class="['owl-carousel', 'owl-theme']">
+            <slot></slot>
+        </div>
+        <span :id="nextHandler">
+            <slot name="next"></slot>
+        </span>
     </div>
 </template>
 <script>
     import 'owl.carousel/dist/assets/owl.carousel.css';
     import 'owl.carousel/dist/assets/owl.theme.default.css';
     import 'owl.carousel';
-    
+
     export default {
       name: 'VOwlCarousel',
       data: function(){
         return {
-            elementHandle: 'carousel_' +  Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
+            prevHandler: 'carousel_prev_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
+            elementHandle: 'carousel_' +  Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
+            nextHandler: 'carousel_next_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
           }
       },
       props: {
@@ -74,9 +84,9 @@
             default: {}
         }
       },
-      
+
       mounted : function() {
-        $('#' + this.elementHandle).owlCarousel({
+        const owl = $('#' + this.elementHandle).owlCarousel({
             items        : this.items,
             margin       : this.margin,
             loop         : this.loop,
@@ -96,6 +106,14 @@
             autoplayTimeout     : this.autoplayTimeout,
             autoplayHoverPause     : this.autoplayHoverPause,
             responsive     : this.responsive
+        });
+
+        $('#' + this.prevHandler).click(function() {
+          owl.trigger('prev.owl.carousel');
+        });
+
+        $('#' + this.nextHandler).click(function() {
+          owl.trigger('next.owl.carousel');
         });
       }
   }

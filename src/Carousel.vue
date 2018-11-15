@@ -81,7 +81,9 @@
             default: false
         },
         responsive: {
-            default: {}
+            default() {
+                return {}
+            }
         }
       },
 

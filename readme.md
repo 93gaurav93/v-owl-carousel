@@ -69,6 +69,49 @@ Set options,
 ```
 
 
+## Usage in Nuxt.js
+
+`npm i v-owl-carousel`
+
+Then in your plugins/ directory, create a new file owl.js:
+
+```javascript
+
+import Vue from 'vue'
+import OwlCarousel from 'v-owl-carousel'
+
+Vue.component('carousel', OwlCarousel)
+
+```
+
+
+Then in nuxt.config.js:
+
+
+```javascript
+
+plugins: [
+  {src: 'plugins/owl.js', ssr: false} // Only works on client side
+], ...
+
+```
+
+And finally in the page or component:
+
+```html
+
+<no-ssr> <!-- important to add no-ssr-->
+
+  <carousel :options>
+
+    ...content
+
+  </carousel>
+
+</no-ssr>
+
+```
+
 
 ## Available options
 

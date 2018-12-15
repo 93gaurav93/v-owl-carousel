@@ -1,7 +1,7 @@
 {
   "name": "v-owl-carousel",
   "description": "VueJS wrapper for Owl Carousel",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "author": {
     "name": "Gaurav Deshpande <93gaurav93@gmail.com>"
   },

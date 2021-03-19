@@ -68,6 +68,20 @@ Set options,
 
 ```
 
+Set events,
+
+```
+
+<carousel @change="doSomething">
+
+//
+
+//
+
+</carousel>
+
+```
+
 
 ## Usage in Nuxt.js
 
@@ -445,6 +459,12 @@ Object containing responsive options. Can be set to false to remove responsive c
 
 
 
+## Events
+
+- ### change
+  Emitter: carousel
+
+  Description: Emits when carousel has changed (changed.owl.carousel)
 
 
 ## :collision: NPM

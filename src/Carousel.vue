@@ -23,6 +23,7 @@
             prevHandler: 'carousel_prev_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
             elementHandle: 'carousel_' +  Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
             nextHandler: 'carousel_next_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
+            owl: null
           }
       },
       props: {
@@ -88,35 +89,47 @@
       },
 
       mounted : function() {
-        const owl = $('#' + this.elementHandle).owlCarousel({
-            items        : this.items,
-            margin       : this.margin,
-            loop         : this.loop,
-            center       : this.center,
-            nav          : this.nav,
-            autoplay     : this.autoplay,
-            autoplaySpeed: this.autoplaySpeed,
-            rewind       : this.rewind,
-            mouseDrag    : this.mouseDrag,
-            touchDrag    : this.touchDrag,
-            pullDrag     : this.pullDrag,
-            freeDrag     : this.freeDrag,
-            stagePadding     : this.stagePadding,
-            autoWidth     : this.autoWidth,
-            autoHeight     : this.autoHeight,
-            dots     : this.dots,
-            autoplayTimeout     : this.autoplayTimeout,
-            autoplayHoverPause     : this.autoplayHoverPause,
-            responsive     : this.responsive
-        });
+        this.setOwlInstance()
+        this.addListeners()
+      },
+      methods: {
+        setOwlInstance() {
+            this.owl = $('#' + this.elementHandle).owlCarousel({
+                items        : this.items,
+                margin       : this.margin,
+                loop         : this.loop,
+                center       : this.center,
+                nav          : this.nav,
+                autoplay     : this.autoplay,
+                autoplaySpeed: this.autoplaySpeed,
+                rewind       : this.rewind,
+                mouseDrag    : this.mouseDrag,
+                touchDrag    : this.touchDrag,
+                pullDrag     : this.pullDrag,
+                freeDrag     : this.freeDrag,
+                stagePadding     : this.stagePadding,
+                autoWidth     : this.autoWidth,
+                autoHeight     : this.autoHeight,
+                dots     : this.dots,
+                autoplayTimeout     : this.autoplayTimeout,
+                autoplayHoverPause     : this.autoplayHoverPause,
+                responsive     : this.responsive
+            });
+        },
+        addListeners() {
+            $('#' + this.prevHandler).click(() => {
+                this.owl.trigger('prev.owl.carousel');
+            });
 
-        $('#' + this.prevHandler).click(function() {
-          owl.trigger('prev.owl.carousel');
-        });
+            $('#' + this.nextHandler).click(() => {
+                this.owl.trigger('next.owl.carousel');
+            });
 
-        $('#' + this.nextHandler).click(function() {
-          owl.trigger('next.owl.carousel');
-        });
+            this.owl.on('changed.owl.carousel', this.onChange)
+        },
+        onChange(e) {
+            this.$emit('change', e)
+        }
       }
   }
 </script>

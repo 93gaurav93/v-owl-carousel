@@ -42,6 +42,9 @@
         nav : {
             default: true
         },
+        rtl : {
+            default: false
+        },
         autoplay : {
             default: false
         },
@@ -100,6 +103,7 @@
                 loop         : this.loop,
                 center       : this.center,
                 nav          : this.nav,
+                rtl          : this.rtl,
                 autoplay     : this.autoplay,
                 autoplaySpeed: this.autoplaySpeed,
                 rewind       : this.rewind,
